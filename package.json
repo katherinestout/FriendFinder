@@ -1,0 +1,26 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "friend finder",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "friend",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katherinestout/FriendFinder.git"
+  },
+  "keywords": [
+    "friend",
+    "finder"
+  ],
+  "author": "katie stout",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katherinestout/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/katherinestout/FriendFinder#readme"
+}
