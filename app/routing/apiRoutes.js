@@ -22,11 +22,10 @@ app.post("/api/friendFinder"), function(req, res){
     //console.log(req.body);
 
     // now calculate the total score of the survey
+    //var total = req.body.scores(function(){    })
 
-    var total = req.body.scores
 
 
-   //res.json(true);
 
  
 
@@ -64,5 +63,5 @@ app.post("/api/friendFinder"), function(req, res){
     friends.push (req.body);
 
 
-});
+};
 };

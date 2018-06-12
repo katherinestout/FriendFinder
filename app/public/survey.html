@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-  
+<!--the survey questions!-->
 <div class="container">
 <div class="row">
 <form class="col s12">
@@ -179,9 +179,61 @@
 
 <!--our javascript link-->
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
-<script type ="text/javascript"></script>
+<script type ="text/javascript">
 
-<!--get the values of the questions-->
+$(document).ready(function(){
+    //referencing the modal
+    $(".modal").modal();
+    $("form").submit(function(event){
+        event.preventDefault();
+
+        //get the survey response
+        var surveyResp = {
+            name: $("#name").val(),
+            image: $("#image").val(),
+            //get the values of the questiosn!
+            scores: [$("#q1 option: selected").val(),
+            $("#q2 option: selected").val(),
+            $("#q3 option: selected").val(),
+            $("#q4 option: selected").val(),
+            $("#q5 option: selected").val(),
+            $("#q6 option: selected").val(),
+            $("#q7 option: selected").val(),
+            $("#q8 option: selected").val(),
+            $("#q9 option: selected").val(),
+            $("#q10 option: selected").val(),
+            ]
+        };
+
+        $.post("/api/friendFinder", surveyResp, function(data){
+            if (data){
+                $(".modal h3").text(data.name);
+                $(".modal img").attr("src", data.image);
+
+                $(".modal").modal("open");
+            } else {
+                alert("woopsie");
+
+            }
+
+            $("#image").val("");
+            $("#name").val("");
+            $("select").val("0").formSelect();
+
+            });
+
+        });
+
+    });
+
+
+
+
+</script>
+
+
+
+
             
 </body>
 </html>

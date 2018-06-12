@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 //integrating these routes into the server.js, points the server to route files
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
+
 //making sure it's listening
 app.listen(PORT, function(){
     console.log("App is listening on the PORT:" + PORT);
